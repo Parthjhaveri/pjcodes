@@ -66,6 +66,30 @@
 		});
 	}
 
+	// HOME FEATURED QUIZ
+	var feat_ex_submit = document.getElementById('feat-ex-sub');
+
+	feat_ex_submit.addEventListener('click', function(event) {
+		event.preventDefault();
+		let selected_answer = document.querySelector('input[name="choice"]:checked').value;
+		let confirmation = document.querySelectorAll('#home-code aside.confirmation')[0];
+		let confirmation_text = document.querySelectorAll('#home-code aside.confirmation p')[0];
+		
+		if (selected_answer === 'choice-b') {
+			confirmation_text.innerHTML = 'Correct Answer!'
+
+			confirmation.style.display = 'flex';
+			confirmation.style.backgroundColor = '#1bac9c';
+			confirmation.style.transition = '0.4s';
+		} else {
+			confirmation_text.innerHTML = 'Wrong Answer!'
+
+			confirmation.style.display = 'flex';
+			confirmation.style.backgroundColor = '#e83e8c';
+			confirmation.style.transition = '0.4s';
+		}
+	});
+
 
 })();
 

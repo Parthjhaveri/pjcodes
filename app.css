@@ -165,6 +165,23 @@
 	color: #1abc9c;
 }
 
+#home-code aside.confirmation {	
+	width: 100%;
+	height: auto;
+	padding: 5px 20px;
+	border-radius: 2px;
+	transition: 0.4s;
+	color: #fff;
+	text-align: left;
+	align-items: center;
+	display: none;
+}
+
+#home-code aside.confirmation p {	
+	font-size: 1.3rem;
+	font-weight: 400;
+}
+
 
 
 
