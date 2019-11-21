@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+	/* SCROLLBAR */
+	::-webkit-scrollbar {
+	  width: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+	  background: #303045;
+	}
+
+	::-webkit-scrollbar-thumb {
+	  background: #1a1a1a;
+	}
+
+	/* HERO / ABOVE THE FOLD */
+	* {
+		-webkit-font-smoothing: antialiased !important;
+  		-moz-osx-font-smoothing: grayscale !important;	
+	}
+	body {
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Cairo', sans-serif;
+		font-weight: 100 !important;
+		font-size: 22px;
+	}
+	p, li, a {
+		font-size: .95rem;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		padding-bottom: 40px;
+	}
+	h1:before {
+		content: ' ';
+		width: auto;
+		height: auto;
+		border: 2px solid #1abc9c;
+		margin-right: 10px;
+		color: transparent;
+	}
+	/* UTILITY */ 
+	.btn-std {
+		width: auto;
+		height: auto;
+		border: 1px solid #fff;		
+		background-color: transparent;
+		padding: 8px 15px;
+		font-size: 1rem;
+		transition: 0.4s;
+	}
+	.btn-std code {
+		color: #fff;
+	}
+	.btn-std:hover code {
+		color: #1abc9c;
+		transition: 0.4s;
+	}
+	.no-pad-mar {
+		margin: 0px;
+		padding: 0px;
+	}
+	.sec-block {
+		width: 100%;
+		height: auto;
+		padding: 40px 0px;
+	}
+	.content-wrap {
+		width: auto;
+		height: auto;
+	}
+	.no-ls {
+		list-style: none;
+	}
+	.txt-purp {
+		color: #303045;
+	}
+	.txt-white {
+		color: #fff;
+	}
+	.hr-green {
+		width: 100%;
+		height: auto;
+		background-color: #1abc9c;
+	}
+	.active-grey {
+		background-color: #bfbfbf !important; 
+	}
+	.arrow-down {
+	  width: 0; 
+	  height: 0; 
+	  border-left: 10px solid transparent;
+	  border-right: 10px solid transparent; 
+	  border-top: 10px solid #1abc9c;
+	  position: absolute;
+	  top: 100%;
+	}
+	.code-block {
+		background-color: #fff;
+		color: #000;
+	}
+
+	/* GENERAL */
+	aside#email-sticky {
+		position: fixed;
+		bottom: 0;
+		right: 25px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		-webkit-box-align: center;
+	}
+	aside#email-sticky a:after {
+		content: '';
+		width: 1px;
+		height: 100px;
+		display: inline-block;
+		margin: 0px auto;
+		background-color: #bfbfbf;
+		position: relative;
+		right: 2px;
+		margin-top: 20px;
+	}
+	aside#email-sticky a {
+		color: #bfbfbf;
+		letter-spacing: 2px;
+		writing-mode: vertical-rl;
+		display: inline-block;
+	}
+
+	aside#arrow-sticky {
+		position: absolute;
+		bottom: 10px;
+		margin: 0px auto;
+		color: #bfbfbf;
+		font-size: 1.4rem;
+		opacity: 0.5;
+	}
+
+	nav {
+		width: 100%;
+		height: auto;
+		background-color: transparent;
+		position: fixed;
+		z-index: 100;
+	}
+	nav .content-wrap {
+		display: flex;
+		justify-content: space-between;
+		height: 100%;
+	}
+	nav ul {
+		width: auto;
+		color: #fff;
+		display: inline-flex;
+		flex-direction: row;
+	}
+	nav ul.links:before {
+		content: '[';
+		position: relative;
+		top: -1.5px;
+		color: #1abc9c;
+	}
+	nav ul.links:after {
+		content: ']';
+		position: relative;
+		top: -1.5px;
+		color: #1abc9c;
+	}
+	nav ul li {
+		padding: 0px 20px;
+		transition: 0.2s;
+		cursor: pointer;
+	}
+	nav ul li:hover {
+		color: #1abc9c;
+		transition: 0.2s;
+	}
+	#home-splash {
+		width: 100%;
+		height: 100vh;
+		background-color: #303045;
+		background-image: url(./images/pj-codes-banner.png);
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	#home-splash .content-wrap {
+		text-align: center;		
+	}
+	#home-splash .content-wrap img {
+		width: 75%;
+		height: auto;
+		margin-bottom: 20px;
+	}
+	#home-splash .content-wrap p {
+		width: 55%;
+		color: #bfbfbf;
+		letter-spacing: 1px;
+		display: flex;
+		position: relative;
+		margin: auto;
+	}
+</style>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<title>PJ Codes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width">
+	
+	<link rel="stylesheet" type="text/css" href="./app.css">
+	<script src='./app.js' defer></script>
+	
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Cairo:300&display=swap" rel="stylesheet">
+
+	<!-- FONT AWESOME -->
+	<link media="none" onload="if(media!=='all')media='all'" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+	<!-- BOOSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+	<aside id="email-sticky">
+		<a>Thedivinemonk3y@Gmail.com</a>
+	</aside>
+	
+	<nav class="p-4">
+		<div class="content-wrap">
+			<ul class="no-pad-mar no-ls social">
+				<li><i class="fab fa-facebook-f"></i></li>
+				<li><i class="fab fa-instagram"></i></li>
+				<li><i class="fab fa-github"></i></li>
+				<li><i class="fab fa-youtube"></i></li>
+			</ul>
+			<ul class="no-pad-mar no-ls links">
+				<li>About</li>
+				<li>Work</li>
+				<li>Exercises</li>
+				<li>Social</li>
+				<li>Contact</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="sec-block p-5" id="home-splash">
+		<div class="content-wrap">
+			<img src="./images/logo-white.png" alt="PJ Codes logo">
+			<p class="no-pad-mar mt-3">
+				New York based Front-End Web Developer
+				<br>
+				<br>
+				Dedicated to the craft of engineering seamless, user-friendly and
+				accessible web experiences
+			</p>
+		</div>
+		<aside id="arrow-sticky">
+			<i class="fas fa-angle-down"></i>
+		</aside>
+	</section>
+
+	<section class="sec-block text-justify" id="home-about">
+		<div class="container py-5">
+			<h1 class="txt-purp">About</h1>
+			<div class="row">
+				<div class="col-12 col-md-7">
+					<p>
+					Coding for me is like art. 
+					<br>
+					<br>
+					I have always had a keen interest in the creative
+					aspect of things. Before the development, logic, decision-making and 
+					strategy, stands the most initial - <em><strong>conception phase</strong></em>. In this phase is where rough drafts are made, wireframes are built and mockups are finalized, a 
+					certain superpower is needed. A strength in logically visualizing a certain interface 
+					while keeping in mind accessibility and user-experience, but also in maintaining a 
+					beautiful user-interface which users can enjoy. After this point, the browser becomes a <em><strong>mere canvas</strong></em>. A blank page, where art is created. 
+					<br>
+					<br>
+					This is where my 
+					strengths lie.
+					<br>
+					<br>
+					I have always had a love for the creative, but I have also forever been passionate about technology. Fusing the two together has created a magic so powerful that it fuels me to be
+					the 5am artist who survives on coffee and code. I believe that before classifying one's self as a Front-End, Back-End or Full-Stack developer, one should strive to be a good Software Developer, who enjoys working and thrives within their niche. 
+					<br>
+					<br>
+					Aside from coding, I believe it to be imperative that one maintains a good work-life balance. I enjoy Bicycling, Gardening, Wood-working, exercising and watching boring WW2 History-Channel documentaries. If this sounds like someone you would enjoy working with, please keep scrolling further!
+				</p>
+				</div>
+				<div class="col-12 col-md-5">
+					<img src="./images/pjc-pic.png" class="img-responsive" alt="PJ Codes selfie">
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid py-5">
+			<div class="mobile-slots content-wrap">
+				<div class="slot lt">
+					<p>Project Management</p>
+					<hr class="hr-green">
+					<ul class="no-pad-mar no-ls">
+						<li>Agile</li>
+						<li>SCRUM</li>
+						<li>Jira</li>
+						<li>Trello</li>
+						<li>Slack</li>
+						<li>Basecamp</li>
+					</ul>
+				</div>
+				<div class="slot md">
+					<p>Web Development</p>
+					<hr class="hr-green"> 					
+					<ul class="no-pad-mar no-ls">
+						<li>HTML5</li>
+						<li>CSS3</li>
+						<li>CSS Animations</li>
+						<li>CSS BEM</li>
+						<li>SASS</li>
+						<li>JavaScript/ES6</li>
+						<li>D3 JS</li>
+						<li>jQuery</li>
+						<li>Redux</li>
+						<li>React JS</li>
+						<li>React Native</li>
+						<li>Angular JS</li>
+						<li>Node JS</li>
+						<li>Ionic 4/Studio</li>
+						<li>X-Code</li>
+						<li>Boostrap 4</li>
+						<li>Material UI</li>
+						<li>Mocha</li>
+						<li>Chai</li>
+						<li>Backstop JS</li>
+						<li>Chrome Debugging</li>
+						<li>Wordpress</li>
+						<li>SquareSpace</li>
+						<li>Magento</li>
+						<li>Woo Commerce</li>
+					</ul>					
+				</div>
+				<div class="slot rt">				
+					<p>Web Design/Art</p>
+					<hr class="hr-green"> 
+					<ul class="no-pad-mar no-ls">
+						<li>Adobe Illustrator</li>
+						<li>Photoshop</li>
+						<li>XD</li>
+						<li>Affinity Designer</li>
+						<li>InDesign</li>
+						<li>Sketch</li>						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="sec-block text-justify text-white" id="home-work">
+		<div class="container py-5">
+			<h1>Work</h1>
+			<aside class="bubble">
+				<p class="no-pad-mar">Click on one of these boxes</p>
+				<div class="arrow-down"></div>
+			</aside>
+
+			<div class="content-wrap job-boxes">
+				<div class="box" data-job='egc'>
+					<img src="./images/egc-logo.png" class="img-responsive" alt="EGC Group logo">
+				</div>
+				<div class="box" data-job='harvard'>					
+					<img src="./images/harvard-ilab-logo.png" class="img-responsive" alt="Harvard Innovation Lab logo">
+				</div>
+				<div class="box" data-job='fs'>					
+					<img src="./images/fs1-logo.png" class="img-responsive" alt="FS1 logo">
+				</div>
+				<div class="box" data-job='pursuit'>					
+					<img src="./images/pursuit-logo.png" class="img-responsive" alt="Pursuit logo">
+				</div>
+				<div class="box" data-job='thump'>
+					<img src="./images/thump-local-logo.png" class="img-responsive" alt="Thump Local logo">
+				</div>
+				<div class="box" data-job='upton'>
+					<img src="./images/upton-logo.png" class="img-responsive" alt="Upton Realty logo">
+				</div>
+			</div>
+			<div class="content-wrap job-desc">				
+				<p class="no-pad-mar no-ls mt-3" id="job-desc-ul">
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="sec-block text-justify text-white" id="home-side-projects">
+		<div class="container py-5">
+			<h1>Featured side Projects</h1>
+			<h4 class="mt-5"><code>0:{project: 'Earthquake Alert'}<span style="color: #666;"> // My personal favorite</span></code></h4>
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<img src="./images/eq-alert-one.png" alt="Earthquake Alert pic">	
+				</div>
+				<div class="col-12 col-md-6">
+					<p>
+						An app that uses the USGS REST API to pull in live Earthquake data 
+						from around the world into a clickable table feed, which changes
+						pin on a map.
+						<br>
+						<br>
+						I used React, Redux combined with D3 JS to chart a powerful and informative 
+						graph based on button click. This app is on-going and i have yet to make some
+						CSS refinements, along with a ton of planned features. 
+						<br>
+						<br>
+						The end goal of this project is to publish a short sociological study on the implications of high-magnitude earthquakes on the affected populus.
+					</p>
+					<button class="btn-std mt-4">
+						<code>View this project</code>
+					</button>
+				</div>
+			</div>
+
+			<h4 class="mt-5"><code>1:{project: 'Planet Watch'}</code></h4>
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<img src="./images/neothree.png" alt="Panet Watch pic">	
+				</div>
+				<div class="col-12 col-md-6">
+					<p>
+						Built in React, this app that provides a consolidated narrative on several Global and Astronomical issues.
+						<br>
+						<br>
+						The cornerstone feature of this app is the NEO (Near Earth Object) tracker feature
+						i built using the NASA Data API. The app pulls in data on asteroids that are relatively close to Earth and lists their speed, trajectory, size, composition and more. By hitting the 'Hypothetical Hit', the app lists those properties and presents a danger level based on proximity and speed.						
+					</p>
+					<button class="btn-std mt-4">
+						<code>View this project</code>
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="sec-block code-block" id="home-code">
+		<div class="container py-5">
+			<h1>Featured Exercise</h1>
+			<div class="row">
+				<div class="col-12 col-md-7">
+<pre>
+<code>
+function shows() {
+		
+    var supernatural = {
+        older: 'Dean Winchester',
+        younger: 'Sam Winchester',
+        angel: 'Castiel',
+        king: 'Crowley',
+        evil: 'Lucifer',
+        hell: function() {
+          return 'The king of hell is ' + this.king + 
+          ' & his adversary is ' + this.evil;
+        }
+      }
+      
+      return supernatural.hell();
+    }
+
+shows();
+</code>
+</pre>
+				</div>
+				<div class="col-12 col-md-5">
+					<p>
+						<strong>What will be the output of this code?</strong>
+						<br>
+						<br>
+						Select your answer below...
+						<form id="feat-ex">
+							<span>
+								<input type="radio" name="choice" value="choice-a">
+								<label><code>ReferenceError</code></label>
+							</span>
+							
+							<span>
+								<input type="radio" name="choice" value="choice-b">
+								<label><code>'The king of hell is Crowley & his adversary is Lucifer'</code></label>
+							</span>
+
+							<span>
+								<input type="radio" name="choice" value="choice-c">
+								<label>'<code>The king of hell is <strong>undefined</strong> & his adversary is <strong>undefined</strong>'</code></label>
+							</span>
+
+							<span>
+								<input type="radio" name="choice" value="choice-d">
+								<label><code>TypeError</code></label>
+							</span>
+
+							<button class="btn-std mt-4">
+								<code>Submit</code>
+							</button>
+						</form>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>
