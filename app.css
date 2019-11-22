@@ -195,7 +195,7 @@
 }
 
 #home-social img {
-	width: 100%;
+	width: 80%;
 	border-radius: 5px;
 	box-shadow: 0px 0px 25px #000;
 	position: relative;
@@ -206,11 +206,79 @@
 	width: 95%;
 }
 
-#home-social .row p i {
+#home-social .row .col-12.col-md-3 p svg {
 	color: #1abc9c;
 }
 
+/* HOME CONTACT */
+#home-contact .content-wrap {
+	display: flex;
+	justify-content: center;
+}
 
+#home-contact .content-wrap form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+	padding: 50px 0px;
+	width: 50%;
+	border-radius: 5px;
+	box-shadow: 0px 0px 25px #bfbfbf;
+}
+
+#home-contact .content-wrap form span {
+	width: 80%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+#home-contact .content-wrap form span label {
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-size: 0.70rem;
+	text-transform: uppercase;
+}
+
+#home-contact .content-wrap form span input {
+	font-size: 0.90rem;
+	padding: 5px;
+	border: none;
+	border-bottom: 2px solid #303045;
+	font-style: italic;
+}
+
+#home-contact .content-wrap form span textarea {
+	font-size: 0.90rem;
+	padding: 5px;
+	min-height: 120px;
+	border: none;
+	border-bottom: 2px solid #303045;
+	font-style: italic;
+}
+
+#home-contact .content-wrap form button {
+	border-color: #000;
+	padding-left: 50px; 
+	padding-right: 50px; 
+}
+
+#home-contact .content-wrap form button code {
+	color: #000;
+}
+
+footer {
+	background-color: #1a1a1a;
+}
+
+footer img {
+	width: 200px;
+	display: block;
+	position: relative;
+	margin: 0px auto;
+}
 
 
 
