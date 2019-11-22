@@ -3,10 +3,12 @@
 }
 
 #home-about img {
-	width: 100%;
+	width: 85%;
 	height: auto;
 	border-radius: 5px;
 	box-shadow: 0px 0px 25px #ddd;
+	position: absolute;
+	right: 0px;
 }
 
 #home-about .mobile-slots {
@@ -53,10 +55,10 @@
 #home-work aside.bubble {
 	width: auto;
 	height: auto;
-	padding: 20px;
+	padding: 10px 20px;
 	position: absolute;
 	display: block;
-	margin-top: -100px;
+	margin-top: -80px;
 	left: 50%;
 	transform: translateX(-50%);
 	background-color: #1abc9c;
@@ -181,6 +183,31 @@
 #home-code aside.confirmation p {	
 	font-size: 1.3rem;
 	font-weight: 400;
+}
+
+#home-code a:hover {	
+	text-decoration: none;
+}
+
+/* HOME SOCIAL */
+#home-social {
+	background-color: #303045;
+}
+
+#home-social img {
+	width: 100%;
+	border-radius: 5px;
+	box-shadow: 0px 0px 25px #000;
+	position: relative;
+	margin: 0px auto;
+}
+
+#home-social .row button {
+	width: 95%;
+}
+
+#home-social .row p i {
+	color: #1abc9c;
 }
 
 
