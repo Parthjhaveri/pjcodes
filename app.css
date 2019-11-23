@@ -330,6 +330,10 @@ footer img {
 
 @media only screen and (max-width: 576px) { /* SMALL */
 
+	#home-code aside.confirmation {
+		width: 100%;
+	}
+
 	#home-about .mobile-slots .slot {
 		width: 100%;
 	}
