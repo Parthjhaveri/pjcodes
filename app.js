@@ -61,6 +61,11 @@
 				job_desc_ul.innerHTML = jobs[event.target.parentNode.dataset.job];
 				
 				$(event.target.parentNode).addClass('active-grey').siblings().removeClass('active-grey');
+
+				// MEDIA QUERY
+				if (window.innerWidth <= 992) {
+					job_desc_ul.style.height = 'auto';
+				}
 			}			
 
 		});

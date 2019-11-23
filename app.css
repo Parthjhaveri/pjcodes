@@ -220,7 +220,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #fff;
+	background-color: #f7f7f7;
 	padding: 50px 0px;
 	width: 50%;
 	border-radius: 5px;
@@ -244,20 +244,22 @@
 
 #home-contact .content-wrap form span input {
 	font-size: 0.90rem;
-	padding: 5px;
+	padding: 5px 0px;
 	border: none;
 	border-bottom: 2px solid #303045;
 	font-style: italic;
 	margin-bottom: 20px;
+	background-color: #f7f7f7;
 }
 
 #home-contact .content-wrap form span textarea {
 	font-size: 0.90rem;
-	padding: 5px;
-	min-height: 120px;
+	padding: 5px 0px;
+	min-height: 80px;
 	border: none;
 	border-bottom: 2px solid #303045;
 	font-style: italic;
+	background-color: #f7f7f7;
 }
 
 #home-contact .content-wrap form button {
@@ -279,6 +281,110 @@ footer img {
 	display: block;
 	position: relative;
 	margin: 0px auto;
+}
+
+/* HERO MEDIA QUERIES */
+@media only screen and (max-width: 1200px) { /* LARGE */
+
+	#home-code pre code {
+		font-size: 0.7rem;
+	}
+}
+
+@media only screen and (max-width: 992px) { /* LARGE */
+
+	aside#email-sticky {
+		display: none;
+	}
+
+	#home-about img {
+		position: relative;
+		margin: 40px auto;
+		display: flex;
+		align-self: center;
+	}
+
+	#home-about .mobile-slots {
+		flex-direction: column;
+	}
+
+	#home-about .mobile-slots .slot {
+		width: 65%;
+		margin-bottom: 40px;
+	}
+
+	#home-work .content-wrap.job-boxes .box {
+		width: 30%;
+		height: auto;
+	}
+
+	#home-side-projects .col-12.col-lg-6, #home-code .col-12.col-lg-6, #home-social .col-12.col-lg-3 {
+		margin-bottom: 40px;
+	}
+
+	#home-contact .content-wrap form {
+		width: 100%;
+	}
+
+}
+
+@media only screen and (max-width: 576px) { /* SMALL */
+
+	#home-about .mobile-slots .slot {
+		width: 100%;
+	}
+
+	#home-side-projects .pb-5 {
+		padding-bottom: 0px !important;
+	}
+
+	button.btn-std, button.btn-std.mt-4, #feat-ex-sub {
+		margin: 0px auto !important;
+		margin-top: 40px !important;
+		display: inherit;
+		width: 100%;
+	}
+
+	#home-side-projects {
+		text-align: left !important;
+	}
+
+	#home-side-projects p {
+		text-align: center !important;
+	}
+
+	#home-splash .content-wrap p {
+		width: 100%;
+	}
+
+	#home-code pre code {
+		font-size: 0.6rem;
+	}
+
+	#home-work aside.bubble {
+		margin-top: -50px;
+	}
+
+	#home-work aside.bubble p {
+		font-size: 0.7rem;
+	}
+
+	#home-code .col-12.col-lg-6:nth-child(2) {
+		margin-bottom: 0px;
+	}
+
+	#home-code form#feat-ex button#feat-ex-sub  {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	#home-contact button {
+		width: 80%;
+		display: flex;
+		justify-content: center;
+	}
+
 }
 
 
